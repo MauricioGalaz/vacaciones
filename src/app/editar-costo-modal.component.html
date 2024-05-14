@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar Costo</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Costo del viaje (USD)</ion-label>
+    <ion-input type="number" [(ngModel)]="costo"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="guardarCosto()">Guardar</ion-button>
+</ion-content>
