@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Bienvenido a la Aplicación de Destinos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-img src="{{ welcomeImageUrl }}" alt="Welcome Image" class="custom-image"></ion-img>
+    <ion-card-header>
+      Buscar Destinos
+    </ion-card-header>
+    <ion-card-content>
+      <ion-searchbar (ionChange)="buscarDestinos($event)"></ion-searchbar>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngFor="let destino of destinosRecientes" class="destination-card">
+    <ion-img [src]="destino.imagen" alt="Destino Image" class="custom-image"></ion-img>
+    <ion-card-header>
+      {{ destino.nombre }}
+    </ion-card-header>
+    <ion-card-content>
+      <ion-buttons slot="end">
+        <ion-button (click)="editarCosto(destino)">Editar Costo</ion-button>
+        <ion-button (click)="eliminarDestino(destino)">Eliminar</ion-button>
+      </ion-buttons>
+      <p>País: {{ destino.pais }}</p>
+      <p>Costo: {{ destino.costo }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
