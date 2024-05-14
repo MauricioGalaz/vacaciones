@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-searchbar [(ngModel)]="termino" (ionChange)="buscarDestinos()"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let destino of resultados">
+      <ion-label>{{ destino.nombre }}</ion-label>
+      <ion-button slot="end" (click)="agregarDestino(destino)">Agregar</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
